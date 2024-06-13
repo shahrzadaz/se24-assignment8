@@ -1,7 +1,7 @@
 # Software Engineering Summer 2024
 
-This repository is used to showcase concepts such as build automation, code quality monitoring, continuous integration, 
-behavior-driven development, as well as architectures for web applications.
+This repository is used to showcase concepts such as build automation, code quality monitoring, continuous integration,
+behavior-driven development, architectures for web applications, unit testing, and mocking.
 
 ## Spring Boot Web Application
 
