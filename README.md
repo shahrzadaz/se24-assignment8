@@ -35,3 +35,9 @@ curl http://localhost:8080/list
 ```bash
 curl --request DELETE http://localhost:8080/list
 ```
+
+### Get max length of list
+
+```bash
+curl http://localhost:8080/list/max-length
+```

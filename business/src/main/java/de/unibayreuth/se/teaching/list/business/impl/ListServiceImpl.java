@@ -26,4 +26,9 @@ public class ListServiceImpl implements ListService {
                 value -> listDataService.append(value.getDoubleValue())
         );
     }
+
+    @Override
+    public int getMaxLength() {
+        return listDataService.getMaxLength();
+    }
 }

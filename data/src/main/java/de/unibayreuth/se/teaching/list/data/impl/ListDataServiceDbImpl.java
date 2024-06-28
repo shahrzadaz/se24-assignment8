@@ -1,6 +1,7 @@
 package de.unibayreuth.se.teaching.list.data.impl;
 
 import de.unibayreuth.se.teaching.list.business.ports.ListDataService;
+import de.unibayreuth.se.teaching.list.data.config.ListConfiguration;
 import de.unibayreuth.se.teaching.list.data.persistence.ListEntity;
 import de.unibayreuth.se.teaching.list.data.persistence.ListRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 @Profile("db") // prevent this service from being loaded as long as we have not discussed Docker in the lecture
 class ListDataServiceDbImpl implements ListDataService {
     private final ListRepository repository;
+    private final ListConfiguration configuration;
 
     @Override
     public java.util.List<Double> get() {
@@ -30,5 +32,10 @@ class ListDataServiceDbImpl implements ListDataService {
         ListEntity entity = new ListEntity();
         entity.setValue(value);
         repository.saveAndFlush(entity);
+    }
+
+    @Override
+    public int getMaxLength() {
+        return configuration.maxLength();
     }
 }

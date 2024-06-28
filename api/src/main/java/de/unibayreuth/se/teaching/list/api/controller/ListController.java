@@ -50,6 +50,21 @@ public class ListController {
     }
 
     @Operation(
+            summary = "Get max length of list.",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            content = @Content(mediaType = "text/plain"),
+                            description = "Max length of list (integer number)."
+                    )
+            }
+    )
+    @GetMapping(value = "/list/max-length")
+    public ResponseEntity<Integer> getListMaxLength() {
+        return ResponseEntity.ok(listService.getMaxLength());
+    }
+
+    @Operation(
             summary = "Appends elements to the list.",
             responses = {
                     @ApiResponse(
