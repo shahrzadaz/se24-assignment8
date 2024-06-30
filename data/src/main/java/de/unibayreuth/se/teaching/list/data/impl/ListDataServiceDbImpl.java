@@ -28,14 +28,14 @@ class ListDataServiceDbImpl implements ListDataService {
     }
 
     @Override
+    public int getMaxLength() {
+        return configuration.maxLength();
+    }
+
+    @Override
     public void append(Double value) {
         ListEntity entity = new ListEntity();
         entity.setValue(value);
         repository.saveAndFlush(entity);
-    }
-
-    @Override
-    public int getMaxLength() {
-        return configuration.maxLength();
     }
 }

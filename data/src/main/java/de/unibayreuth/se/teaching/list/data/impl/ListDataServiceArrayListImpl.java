@@ -23,14 +23,14 @@ public class ListDataServiceArrayListImpl implements ListDataService {
     }
 
     @Override
-    public void append(Double value) {
-        list.add(value);
-    }
-
-    @Override
     public int getMaxLength() {
         Integer maxLength = applicationContext.getEnvironment().getProperty("seubt.list.maxLength", Integer.class);
         Objects.requireNonNull(maxLength);
         return maxLength;
+    }
+
+    @Override
+    public void append(Double value) {
+        list.add(value);
     }
 }

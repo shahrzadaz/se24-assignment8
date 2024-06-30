@@ -7,6 +7,6 @@ import java.util.List;
  */
 public interface ListDataService {
     List<Double> get();
-    void append(Double value);
     int getMaxLength();
+    void append(Double value);
 }

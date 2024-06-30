@@ -7,6 +7,6 @@ import java.util.List;
  */
 public interface ListService {
     List<Value> get();
-    void append(List<Value> valuesToAppend);
     int getMaxLength();
+    void append(List<Value> valuesToAppend);
 }

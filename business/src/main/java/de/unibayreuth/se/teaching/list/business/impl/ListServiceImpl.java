@@ -21,14 +21,14 @@ public class ListServiceImpl implements ListService {
     }
 
     @Override
+    public int getMaxLength() {
+        return listDataService.getMaxLength();
+    }
+
+    @Override
     public void append(List<Value> valuesToAppend) {
         valuesToAppend.forEach(
                 value -> listDataService.append(value.getDoubleValue())
         );
-    }
-
-    @Override
-    public int getMaxLength() {
-        return listDataService.getMaxLength();
     }
 }

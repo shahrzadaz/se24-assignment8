@@ -31,6 +31,11 @@ class ListDataServiceDoublyLinkedImpl implements ListDataService {
     }
 
     @Override
+    public int getMaxLength() {
+        return maxLength;
+    }
+
+    @Override
     public void append(Double value) {
         Objects.requireNonNull(maxLength);
         if (list.getLength() >= maxLength) {
@@ -39,10 +44,5 @@ class ListDataServiceDoublyLinkedImpl implements ListDataService {
             );
         }
         list.append(value);
-    }
-
-    @Override
-    public int getMaxLength() {
-        return maxLength;
     }
 }
