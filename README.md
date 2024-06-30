@@ -1,7 +1,8 @@
 # Software Engineering Summer 2024
 
 This repository is used to showcase concepts such as build automation, code quality monitoring, continuous integration,
-behavior-driven development, architectures for web applications, unit testing, and mocking.
+behavior-driven development, architectures for web applications, unit testing, mocking, working with configuration,
+and design patterns.
 
 ## Spring Boot Web Application
 
@@ -34,10 +35,4 @@ curl http://localhost:8080/list
 
 ```bash
 curl --request DELETE http://localhost:8080/list
-```
-
-### Get max length of list
-
-```bash
-curl http://localhost:8080/list/max-length
 ```
