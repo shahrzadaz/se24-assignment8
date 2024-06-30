@@ -6,7 +6,6 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 /**
  * Our doubly linked list implementation from previous assignments.
@@ -14,13 +13,12 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 @Slf4j
-@Component
 public class DoublyLinkedList {
     private Element start;
     private Element end;
     private int length;
 
-    private static final Logger logger = LoggerFactory.getLogger(DoublyLinkedList.class);
+    private static final Logger logger = LoggerFactory.getLogger(DoublyLinkedListComponent.class);
 
     /**
      * Add an element at the end of the list
@@ -188,5 +186,4 @@ public class DoublyLinkedList {
         private Element next;
         private Element prev;
     }
-
 }

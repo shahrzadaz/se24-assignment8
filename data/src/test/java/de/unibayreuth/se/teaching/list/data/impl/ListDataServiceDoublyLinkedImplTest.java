@@ -1,6 +1,6 @@
 package de.unibayreuth.se.teaching.list.data.impl;
 
-import de.unibayreuth.se.teaching.list.data.persistence.DoublyLinkedList;
+import de.unibayreuth.se.teaching.list.data.persistence.DoublyLinkedListComponent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,7 +16,7 @@ public class ListDataServiceDoublyLinkedImplTest {
     private static final int MAX_LENGTH = 10;
 
     @Mock
-    DoublyLinkedList mockedList;
+    DoublyLinkedListComponent mockedList;
 
     private ListDataServiceDoublyLinkedImpl sut;
 

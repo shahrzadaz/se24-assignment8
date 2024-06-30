@@ -1,7 +1,7 @@
 package de.unibayreuth.se.teaching.list.data.impl;
 
 import de.unibayreuth.se.teaching.list.business.ports.ListDataService;
-import de.unibayreuth.se.teaching.list.data.persistence.DoublyLinkedList;
+import de.unibayreuth.se.teaching.list.data.persistence.DoublyLinkedListComponent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,7 +20,7 @@ import java.util.Objects;
 @Qualifier("doublyLinkedListDataService")
 @Primary
 class ListDataServiceDoublyLinkedImpl implements ListDataService {
-    private final DoublyLinkedList list;
+    private final DoublyLinkedListComponent list;
 
     @Value("${seubt.list.maxLength}")
     private final Integer maxLength;
