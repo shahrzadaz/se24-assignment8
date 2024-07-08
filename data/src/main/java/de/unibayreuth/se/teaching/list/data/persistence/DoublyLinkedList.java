@@ -1,11 +1,16 @@
 package de.unibayreuth.se.teaching.list.data.persistence;
 
+import de.unibayreuth.se.teaching.list.data.pattern.Observer;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Our doubly linked list implementation from previous assignments.
@@ -19,12 +24,42 @@ public class DoublyLinkedList {
     private int length;
 
     private static final Logger logger = LoggerFactory.getLogger(DoublyLinkedListComponent.class);
+    private static DoublyLinkedList instance = null;
 
-    /**
-     * Add an element at the end of the list
-     * @param e New list element
-     * @param elementValidation If true, the method checks whether the element is already part of a list
-     */
+    private DoublyLinkedList() {
+
+    }
+    public void reset() {
+        start = null;
+        end = null;
+        length = 0;
+
+    }
+
+    public static DoublyLinkedList getInstance() {
+
+        if (instance == null) {
+            instance = new DoublyLinkedList();
+        }
+
+
+        return instance;
+    }
+    private List<Observer> observers =  new ArrayList<>();
+
+
+
+    public void initializeObservers() {
+        observers.add( new ListClearedObserver());
+        observers.add(new ListClearedObserver());
+    }
+
+
+        /**
+         * Add an element at the end of the list
+         * @param e New list element
+         * @param elementValidation If true, the method checks whether the element is already part of a list
+         */
     public void append(Element e, boolean elementValidation) {
         if (elementValidation && (e.getPrev() != null || e.getNext() != null)) {
             throw new IllegalArgumentException("Element is already part of a list.");

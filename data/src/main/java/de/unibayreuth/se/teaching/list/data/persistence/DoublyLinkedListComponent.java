@@ -1,5 +1,6 @@
 package de.unibayreuth.se.teaching.list.data.persistence;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 
 
@@ -9,8 +10,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DoublyLinkedListComponent {
-    private final DoublyLinkedList list = new DoublyLinkedList();
-
+    private final DoublyLinkedList list = DoublyLinkedList.getInstance();
+    @PostConstruct
+    public void init() {
+        list.initializeObservers();
+    }
     public void append(DoublyLinkedList.Element e, boolean elementValidation) {
         list.append(e, elementValidation);
     }
